@@ -1,12 +1,12 @@
-import Color from './components/color.js'
+import Theme from './components/theme.js'
 import './components/sass/App.sass';
 
-function App() {
-  return (
-    <div className="App">
-      <Color />
-    </div>
-  );
+const App = () => {
+    return (
+        <div className = "App">
+            <Theme />
+        </div>
+    );
 }
 
 export default App;

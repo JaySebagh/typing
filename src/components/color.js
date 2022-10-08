@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { ChromePicker } from "react-color";
+import './sass/color.sass';
 
-const Color = () => {
+const Color = (props) => {
     const [rgba, setRgba] = useState({
-        r: "211",
-        g: "39",
-        b: "245",
-        a: "1",
+        r: props.red,
+        g: props.green,
+        b: props.blue,
+        a: props.alpha,
     }), { r, g, b, a } = rgba;
 
     const [toggle, setToggle] = useState(false);
@@ -17,7 +18,8 @@ const Color = () => {
         color: {
             width: '50px',
             height: '20px',
-            backgroundColor: `rgba(${r},${g},${b},${a})`
+            backgroundColor: `rgba(${r},${g},${b},${a})`,
+            border: '2px solid white'
         },
         popup: {
             position: 'absolute',

@@ -3,16 +3,21 @@ import { ChromePicker } from "react-color";
 import './sass/color.sass';
 
 const Color = (props) => {
+    const style = props.rgba
     const [rgba, setRgba] = useState({
-        r: props.red,
-        g: props.green,
-        b: props.blue,
-        a: props.alpha,
+        r: style.r,
+        g: style.g,
+        b: style.b,
+        a: style.a,
     }), { r, g, b, a } = rgba;
 
     const [toggle, setToggle] = useState(false);
 
-    const handleClick = () => setToggle(curr => !curr), handleClose = () => setToggle(false);
+    const handleClick = () => setToggle(curr => !curr)
+    const handleClose = () => {
+        setToggle(false);
+        props.onColorUpdate(rgba);
+    }
 
     const styles = {
         color: {

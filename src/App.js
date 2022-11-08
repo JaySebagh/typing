@@ -1,6 +1,6 @@
-import Theme from './components/theme.js'
+import Theme from './components/Theme.js'
 import './components/sass/App.sass';
-import Text from './components/text.js'
+import Text from './components/Text.js'
 
 const App = () => {
     return (

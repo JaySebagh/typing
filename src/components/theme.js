@@ -1,7 +1,30 @@
-import Color from './color.js'
-import './sass/theme.sass'
+import { useState } from 'react';
+import Color from './Color.js';
+import './sass/theme.sass';
 
 const Theme = () => {
+    const [bgColor, setBgColor] = useState({                    r: "17",     g: "17",    b: "17",    a: "1"});
+    const [statsColor, setStatsColor] = useState({              r: "241",    g: "190",   b: "176",   a: "1"});
+    const [boxColor, setBoxColor] = useState({                  r: "43",     g: "43",    b: "43",    a: "1"});
+    const [placeholderColor, setPlaceholderColor] = useState({  r: "51",     g: "51",    b: "51",    a: "1"});
+    const [currWordColor, setCurrWordColor] = useState({        r: "68",     g: "68",    b: "68",    a: "1"});
+    const [goodWordColor, setGoodWordColor] = useState({        r: "241",    g: "190",   b: "176",   a: "1"});
+    const [wrongWordColor, setWrongWordColor] = useState({      r: "249",    g: "139",   b: "136",   a: "1"});
+    const [inputColor, setInputColor] = useState({              r: "43",     g: "43",    b: "43",    a: "1"});
+    const [redoColor, setRedoColor] = useState({                r: "241",    g: "190",   b: "176",   a: "1"});
+
+    const updateBgColor = (rgba) => setBgColor(rgba)
+    const updateStatsColor = (rgba) => setStatsColor(rgba)
+    const updateBoxColor = (rgba) => setBoxColor(rgba)
+    const updatePlaceholderColor = (rgba) => setPlaceholderColor(rgba)
+    const updateCurrWordColor = (rgba) => setCurrWordColor(rgba)
+    const updateGoodWordColor = (rgba) => setGoodWordColor(rgba)
+    const updateWrongWordColor = (rgba) => setWrongWordColor(rgba)
+    const updateInputColor = (rgba) => setInputColor(rgba)
+    const updateRedoColor = (rgba) => setRedoColor(rgba)
+
+    console.log(bgColor, statsColor)
+
     return(
         <div className = "colorBox">
             <div className = "textContainer">
@@ -16,15 +39,15 @@ const Theme = () => {
                 <p>Redo: </p>
             </div>
             <div className = "colorContainer">
-                <Color red = "17" green = "17" blue = "17" alpha = "1" /> {/*bg*/}
-                <Color red = "241" green = "190" blue = "176" alpha = "1" /> {/*stats*/}
-                <Color red = "43" green = "43" blue = "43" alpha = "1" /> {/*box*/}
-                <Color red = "51" green = "51" blue = "51" alpha = "1" /> {/*placeholder*/}
-                <Color red = "68" green = "68" blue = "68" alpha = "1" /> {/*curr word*/}
-                <Color red = "241" green = "190" blue = "176" alpha = "1" /> {/*good word*/}
-                <Color red = "249" green = "139" blue = "136" alpha = "1" /> {/*wrong word*/}
-                <Color red = "43" green = "43" blue = "43" alpha = "1" /> {/*input*/}
-                <Color red = "241" green = "190" blue = "176" alpha = "1" /> {/*redo*/}
+                <Color onColorUpdate = {updateBgColor} rgba = {bgColor} />
+                <Color onColorUpdate = {updateStatsColor} rgba = {statsColor} />
+                <Color onColorUpdate = {updateBoxColor} rgba = {boxColor} />
+                <Color onColorUpdate = {updatePlaceholderColor} rgba = {placeholderColor} />
+                <Color onColorUpdate = {updateCurrWordColor} rgba = {currWordColor} />
+                <Color onColorUpdate = {updateGoodWordColor} rgba = {goodWordColor} />
+                <Color onColorUpdate = {updateWrongWordColor} rgba = {wrongWordColor} />
+                <Color onColorUpdate = {updateInputColor} rgba = {inputColor} />
+                <Color onColorUpdate = {updateRedoColor} rgba = {redoColor} />
             </div>
         </div>
     )

@@ -14,6 +14,7 @@ const Color = (props) => {
     const [toggle, setToggle] = useState(false);
 
     const handleClick = () => setToggle(curr => !curr)
+    
     const handleClose = () => {
         setToggle(false);
         props.onColorUpdate(rgba);

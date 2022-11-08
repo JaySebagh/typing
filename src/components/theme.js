@@ -23,8 +23,6 @@ const Theme = () => {
     const updateInputColor = (rgba) => setInputColor(rgba)
     const updateRedoColor = (rgba) => setRedoColor(rgba)
 
-    console.log(bgColor, statsColor)
-
     return(
         <div className = "colorBox">
             <div className = "textContainer">

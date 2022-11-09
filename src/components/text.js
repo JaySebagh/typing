@@ -22,12 +22,15 @@ const Text = () => {
     // https://bobbyhadz.com/blog/react-get-input-value
     const inputRef = useRef(null);
 
+    const element = document.querySelector(".paragraph");
+
     let i = 0;
     const handleChange = (e) => {
         // grab the last letter in the input
         const lastLetter = e.target.value.slice(-1)
         // check if the current input letter matches the current paragraph letter
         if(lastLetter === letters[i]){
+            element.innerHTML =  '<span style="color: #228B22' + '">' + letters[i] + '</span>';
             console.log(letters[i])
             // reset input to blank if the current paragraph letter is a space
             if(lastLetter === " " && letters[i] === " ") e.target.value = ""
@@ -50,7 +53,7 @@ const Text = () => {
                 <button className="size" onClick={() => handleParagraphSize(75)}>75</button>
                 <button className="size" onClick={() => handleParagraphSize(100)}>100</button>
             </div>
-            <div className = "paragraph">
+            <div className="paragraph">
                 {paragraph}
             </div>
             <div>
